@@ -1,51 +1,79 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { Box, styled, Typography } from "@mui/material";
+import { Box, Button, styled, Typography } from "@mui/material";
 
 const Container = styled(Box)(() => ({
   backgroundColor: "cyan",
-  color: "black",
+  // margin: "-20px 500px 950px 0px",
   textAlign: "left",
-  height: "fit-content",
   padding: "20px",
-  display: "flex",
-  flexDirection: "row",
   justifyContent: "space-between",
+  position: "absolute",
+  top: 0,
+  zIndex: 10,
+  height: "10vh",
+  lineHeight: "10vh",
+  display: "flex",
+  transition: "all 0.5s ease-in",
+}));
+
+const StyledBox = styled(Box)(() => ({
+  display: "flex",
   alignItems: "center",
 }));
 
 const LinkText = styled(Typography)(() => ({
   color: "black",
   margin: "0 20px",
+  letterSpacing: "2px",
+  opacity: 0.8,
+  fontSize: "15px",
+}));
+
+const Btn = styled(Button)(() => ({
+  backgroundColor: "black",
+  color: "#fff",
+  padding: "10px 20px",
 }));
 
 const Navbar = () => {
   return (
     <>
       <Container>
-        {/* <MenuUnstyled slotProps={{ listbox: { className: "my-listbox" } }}> */}
-        <NavLink to="/">
-          <LinkText varian="h3">Home</LinkText>
-        </NavLink>
-        <NavLink to="/about">
-          <LinkText varian="h3">About</LinkText>
-        </NavLink>
-        <NavLink to="/gallery">
-          <LinkText varian="h3">Gallery</LinkText>
-        </NavLink>
-        <NavLink to="/destination">
-          <LinkText varian="h3">Destination</LinkText>
-        </NavLink>
-        <NavLink to="/blog">
-          <LinkText varian="h3">Blog</LinkText>
-        </NavLink>
-        <NavLink to="/testimonial">
-          <LinkText varian="h3">Testimonial</LinkText>
-        </NavLink>
-        <NavLink to="/contact">
-          <LinkText varian="h3">Contact Us</LinkText>
-        </NavLink>
-        {/* </MenuUnstyled> */}
+        <StyledBox>
+          <NavLink to="/">
+            <LinkText varian="h3">Home</LinkText>
+          </NavLink>
+          <NavLink to="/about">
+            <LinkText varian="h3">About</LinkText>
+          </NavLink>
+          <NavLink to="/gallery">
+            <LinkText varian="h3">Gallery</LinkText>
+          </NavLink>
+          <NavLink to="/destination">
+            <LinkText varian="h3">Destination</LinkText>
+          </NavLink>
+          <NavLink to="/blog">
+            <LinkText varian="h3">Blog</LinkText>
+          </NavLink>
+          <NavLink to="/testimonial">
+            <LinkText varian="h3">Testimonial</LinkText>
+          </NavLink>
+          <NavLink to="/contact">
+            <LinkText varian="h3">Contact Us</LinkText>
+          </NavLink>
+        </StyledBox>
+        <StyledBox>
+          <NavLink to="/singin">
+            <LinkText varian="h3">Sing In</LinkText>
+          </NavLink>
+          <NavLink to="/register">
+            <LinkText varian="h3">Register</LinkText>
+          </NavLink>
+          <NavLink to="/contact">
+            <Btn>Request a Quote</Btn>
+          </NavLink>
+        </StyledBox>
       </Container>
     </>
   );
