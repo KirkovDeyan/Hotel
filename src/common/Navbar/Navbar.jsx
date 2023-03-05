@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { Box, Button, styled, Typography } from "@mui/material";
 
 const Container = styled(Box)(() => ({
   backgroundColor: "cyan",
-  // margin: "-20px 500px 950px 0px",
   textAlign: "left",
-  padding: "20px",
   justifyContent: "space-between",
-  position: "absolute",
-  top: 0,
-  zIndex: 10,
+  width: " 100%",
   height: "10vh",
   lineHeight: "10vh",
   display: "flex",
@@ -64,7 +60,7 @@ const Navbar = () => {
           </NavLink>
         </StyledBox>
         <StyledBox>
-          <NavLink to="/singin">
+          <NavLink to="/singIn">
             <LinkText varian="h3">Sing In</LinkText>
           </NavLink>
           <NavLink to="/register">
@@ -75,6 +71,7 @@ const Navbar = () => {
           </NavLink>
         </StyledBox>
       </Container>
+      <Outlet />
     </>
   );
 };
