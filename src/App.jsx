@@ -1,11 +1,12 @@
-import { CardActions } from "@mui/material";
+// import { CardActions } from "@mui/material";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 import Navbar from "./common/Navbar/Navbar";
 import Home from "../src/common/Data/Home";
-import Cards from "./common/Data/Cards";
+// import Cards from "./common/Data/Cards";
+// import About from "./components/About/About";
 
 const router = createBrowserRouter([
   {
@@ -20,10 +21,6 @@ const router = createBrowserRouter([
       //   path: "signIn",
       //   element: <Home slides={[1]} />,
       // },
-      {
-        path: "about",
-        element: <Cards />,
-      },
       // {
       //   path: "profile",
       //   element: <Profile />,

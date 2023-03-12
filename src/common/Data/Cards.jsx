@@ -11,10 +11,11 @@ import {
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 import { useState } from "react";
-import DatePicker from "react-datepicker";
 import Data from "./Data";
 import CountrySelect from "./CountrySelext";
-import { margin } from "@mui/system";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 
 const Cards = () => {
   const [current, setCurrent] = useState(0);
@@ -29,7 +30,6 @@ const Cards = () => {
   };
 
   const Wrapper = styled(Box)(() => ({
-    // textAlign: "left",
     width: " 100%",
     margin: "10px",
   }));
@@ -37,27 +37,33 @@ const Cards = () => {
   const Arrow = styled(Box)(() => ({
     position: "absolute",
     top: "50%",
-    right: "20%",
+    right: "10%",
   }));
 
-  const Arrow2 = styled(Box)(() => ({
+  const SecontArrow = styled(Box)(() => ({
     position: "absolute",
     top: "50%",
-    left: "20%",
-    height: "20px",
-    width: "20px",
+    left: "10%",
+  }));
+
+  const Register = styled(Box)(() => ({
+    backgroundColor: "black",
+    opacity: "0.5",
+    position: "absolute",
+    top: "30%",
+    left: "15%",
   }));
 
   return (
     <>
       <Wrapper>
-        <Arrow2>
-          <Button onClick={prevSlide}>
+        <SecontArrow>
+          <Button sx={{ fontSize: "50px" }} onClick={prevSlide}>
             <BsFillArrowLeftCircleFill />
           </Button>
-        </Arrow2>
+        </SecontArrow>
         <Arrow>
-          <Button onClick={nextSlide}>
+          <Button sx={{ fontSize: "50px" }} onClick={nextSlide}>
             <BsFillArrowRightCircleFill />
           </Button>
         </Arrow>
@@ -79,36 +85,36 @@ const Cards = () => {
               </Box>
             )
         )}
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Grid
-            container
-            spacing={2}
-            rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-            direction="row"
-            justifyContent="center"
-            alignItems="colum"
-          >
-            <Grid item xs={12} md={6} lg={4}>
-              <CountrySelect>Country</CountrySelect>
+        <Register>
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Grid
+              container
+              spacing={2}
+              rowSpacing={1}
+              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+              direction="column"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Grid item xs={12} md={6} lg={4}>
+                <CountrySelect>Country</CountrySelect>
+              </Grid>
+              <Grid item xs={12} md={6} lg={4}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DateTimePicker label="Date From" />
+                </LocalizationProvider>
+              </Grid>
+              <Grid item xs={12} md={6} lg={4}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DateTimePicker label="Date To" />
+                </LocalizationProvider>
+              </Grid>
+              <Grid item xs={12} md={6} lg={4}>
+                <Button>Search</Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <DatePicker>Check In</DatePicker>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <DatePicker>Check Out</DatePicker>
-            </Grid>
-            {/* <Grid item xs={12} md={6} lg={4}>
-            <Typography>Adult(s)(18+)</Typography>
-          </Grid> */}
-            {/* <Grid item xs={12} md={6} lg={4}>
-            <Typography>Children(0- 17)</Typography>
-          </Grid> */}
-            <Grid item xs={12} md={6} lg={4}>
-              <Button>Search</Button>
-            </Grid>
-          </Grid>
-        </Container>
+          </Container>
+        </Register>
       </Wrapper>
     </>
   );
