@@ -5,8 +5,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Navbar from "./common/Navbar/Navbar";
 import Home from "../src/common/Data/Home";
-// import Cards from "./common/Data/Cards";
-// import About from "./components/About/About";
+import Destination from "./components/Destinations/Destination";
+import AllBlog from "./components/Blog/AllBlog";
+import AllItem from "./components/Testimonial/AllItem";
+import GaleryCards from "./components/gallery/GaleryCards";
 
 const router = createBrowserRouter([
   {
@@ -18,15 +20,27 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       // {
-      //   path: "signIn",
+      //   path: "about",
       //   element: <Home slides={[1]} />,
       // },
+      {
+        path: "gallery",
+        element: <GaleryCards />,
+      },
+      {
+        path: "destination",
+        element: <Destination />,
+      },
+      {
+        path: "blog",
+        element: <AllBlog />,
+      },
+      {
+        path: "testemonial",
+        element: <AllItem />,
+      },
       // {
-      //   path: "profile",
-      //   element: <Profile />,
-      // },
-      // {
-      //   path: "playground",
+      //   path: "contactus",
       //   element: <Playground />,
       // },
     ],

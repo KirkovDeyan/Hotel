@@ -1,22 +1,26 @@
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
 import Sdata from "./Sdata";
 
-const Cards = ({ item: { id, image, title, sidepara, desc, paraImage_one, paraImage_two } }) => {
+const Cards = ({
+  item: { id, image, title, sidepara, desc, paraImage_one, paraImage_two },
+}) => {
   return (
     <>
-      <div className='items'>
-        <div className='img'>
-          <img src={image} alt='Gallery Image' />
+      <Box className="items">
+        <Box className="img">
+          <Box component="img" src={image} />
 
-          <Link to={`/singlepage/${id}`} className='blogItem-link'>
-            <i className='fas fa-external-link-alt'></i>
+          <Link to={`/singlepage/${id}`} className="blogItem-link">
+            <i className="fas fa-external-link-alt"></i>
           </Link>
-        </div>
-        <div className='title'>
-          <h3>{title} </h3>
-        </div>
-      </div>
+        </Box>
+        <Box className="title">
+          <Typography>{title} </Typography>
+        </Box>
+      </Box>
     </>
   );
 };

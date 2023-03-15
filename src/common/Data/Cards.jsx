@@ -47,8 +47,8 @@ const Cards = () => {
   }));
 
   const Register = styled(Box)(() => ({
-    backgroundColor: "black",
-    opacity: "0.5",
+    backgroundColor: "white",
+    opacity: "0.7",
     position: "absolute",
     top: "30%",
     left: "15%",

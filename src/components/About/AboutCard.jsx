@@ -7,9 +7,7 @@ const AboutCard = () => {
       <Box className="aboutCard mtop">
         <Box className="row row1">
           <Typography>About Us</Typography>
-          <Typography>
-            We <span>provide Solution</span> to grow your business
-          </Typography>
+          <Typography>We provide Solution to grow your business</Typography>
           <Typography>
             Lorem ipsum dolor sit amet consectetur adipiscing elit amet
             consectetur piscing elit amet consectetur adipiscing elit sed et
